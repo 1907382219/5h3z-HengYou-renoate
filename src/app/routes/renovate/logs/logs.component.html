@@ -1,0 +1,81 @@
+<ion-header mode="ios">
+    <ion-segment
+        mode="md"
+        [(ngModel)]="segmentDefaultValue">
+        <ion-segment-button
+            mode="md"
+            value="0">
+            待审核
+        </ion-segment-button>
+        <ion-segment-button
+            mode="md"
+            value="1">
+            待翻新
+        </ion-segment-button>
+        <ion-segment-button
+            mode="md"
+            value="2">
+            已完成
+        </ion-segment-button>
+        <ion-segment-button
+            mode="md"
+            value="3">
+            审核未通过
+        </ion-segment-button>
+    </ion-segment>
+    <ion-item lines="full">
+        <ion-label>数量：3</ion-label>
+    </ion-item>
+</ion-header>
+
+<ion-content>
+    <ng-container>
+        <ion-item
+            lines="none"
+            class="item-date">
+            <ion-label>申请日期：2021年10月11日</ion-label>
+        </ion-item>
+        <ion-item
+            class="item-detail"
+            lines="full">
+            <ion-thumbnail slot="start">
+                <img src="https://img0.baidu.com/it/u=187222037,605864959&fm=26&fmt=auto" />
+            </ion-thumbnail>
+            <ion-label class="ion-no-margin">
+                <p>恒友</p>
+                <p>28T1-2</p>
+                <p>HYBA1245</p>
+            </ion-label>
+            <div class="suffix-buttons">
+                <ion-button
+                    expand="block"
+                    class="ion-no-margin"
+                    fill="outline">
+                    问题详情
+                </ion-button>
+                <ion-button
+                    expand="block"
+                    class="ion-no-margin"
+                    *ngIf="segmentDefaultValue === '0';">
+                    撤销申请
+                </ion-button>
+                <ng-container *ngIf="segmentDefaultValue === '2'">
+                    <ion-button
+                        expand="block"
+                        class="ion-no-margin">
+                        缺少配件详情
+                    </ion-button>
+                    <ion-text color="danger">￥20.00</ion-text>
+                </ng-container>
+                <ng-container *ngIf="segmentDefaultValue === '3'">
+                    <ion-button
+                        expand="block"
+                        class="ion-no-margin">
+                        未通过原因
+                    </ion-button>
+                    <ion-text color="danger">删除</ion-text>
+                </ng-container>
+            </div>
+        </ion-item>
+    </ng-container>
+</ion-content>

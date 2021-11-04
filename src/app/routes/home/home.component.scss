@@ -1,0 +1,16 @@
+ion-content swiper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+}
+ion-footer ion-row {
+    background: var(--ion-color-medium);
+    padding: .5rem;
+    ion-col {
+        padding: .5rem;
+        img {
+            vertical-align: top;
+        }
+    }
+}

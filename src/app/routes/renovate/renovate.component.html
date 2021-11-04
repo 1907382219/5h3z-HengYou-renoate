@@ -1,0 +1,21 @@
+<ion-header mode="ios">
+    <ion-segment
+        mode="md"
+        [value]="segmentDefaultValue"
+        (ionChange)="ionChange($event)">
+        <ion-segment-button
+            mode="md"
+            value="apply">
+            翻新申请
+        </ion-segment-button>
+        <ion-segment-button
+            mode="md"
+            value="logs">
+            翻新记录
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+<ion-content>
+    <ion-router-outlet [animated]="false"></ion-router-outlet>
+</ion-content>

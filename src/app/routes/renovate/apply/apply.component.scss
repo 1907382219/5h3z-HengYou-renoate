@@ -1,0 +1,57 @@
+ion-content {
+    --background: #efefef;
+    ion-item {
+        --background: transparent;
+        .label {
+            font-size: 1rem;
+            width: 6.75rem;
+            display: flex;
+            align-items: center;
+        }
+        &[required] .label::after {
+            content: "*";
+            margin-left: .3rem;
+            color: var(--ion-color-danger);
+        }
+        ion-select::part(icon) {
+            display: none;
+        }
+        > ion-select,
+        > ion-input,
+        > ion-textarea {
+            font-size: 1rem;
+        }
+        > ion-select,
+        > ion-input {
+            text-align: right;
+        }
+        > ion-select,
+        > ion-input,
+        > ion-textarea,
+        > app-upload {
+            flex: 1;
+        }
+        ion-icon.suffix-icon {
+            width: 1rem;
+        }
+    }
+    ion-button.submit {
+        font-size: 1rem;
+        margin: 1.25rem 1.25rem 2rem 1.25rem;
+    }
+    ul.tips {
+        list-style: none;
+        padding: 0 .625rem;
+        margin: 0;
+        li {
+            display: flex;
+            font-size: 1rem;
+            padding: .25rem 0;
+            line-height: 1.5;
+            p {
+                flex: 1;
+                margin: 0;
+            }
+        }
+    }
+}

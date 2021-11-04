@@ -1,0 +1,9 @@
+ion-footer > div {
+    padding-bottom: constand(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+img {
+    vertical-align: top;
+}
+

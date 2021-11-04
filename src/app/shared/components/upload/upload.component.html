@@ -1,0 +1,73 @@
+<div
+    class="pictures-upload-wrap"
+    *ngIf="type === 'pictures'; else files">
+    <ion-thumbnail
+        class="ion-no-margin"
+        *ngFor="let item of data, index as i">
+        <img
+            [src]="item.response?.url || item.buffer"
+            (click)="preview(i)"
+        />
+        <ng-container *ngIf="disabled === undefined || disabled === true">
+            <div
+                class="remove"
+                *ngIf="item.progress === undefined"
+                (click)="remove(item.uid)">
+                <ion-icon name="close-outline" color="light"></ion-icon>
+            </div>
+            <ion-progress-bar
+                *ngIf="item.progress !== undefined"
+                [value]="item.progress">
+            </ion-progress-bar>
+        </ng-container>
+    </ion-thumbnail>
+    <ion-button
+        mode="ios"
+        color="light"
+        class="ion-no-margin"
+        (click)="upload()"
+        *ngIf="disabled === undefined || disabled === true">
+        <!-- 上传 -->
+        <ion-icon name="add-outline" mode="ios"></ion-icon>
+    </ion-button>
+</div>
+
+<ng-template #files>
+    <ion-list
+        class="files-upload-wrap ion-no-margin ion-no-padding"
+        style="width: 100%; background: transparent;">
+        <ion-item
+            lines="none"
+            class="ion-no-padding"
+            *ngFor="let item of data">
+            <ion-icon
+                name="document-text-outline"
+                class="ion-no-margin"
+                slot="start">
+            </ion-icon>
+            <ion-label class="ion-no-margin" style="flex: 1;">
+                {{ item.response?.name || item.file?.name }}
+                <ion-progress-bar
+                    *ngIf="item.progress !== undefined"
+                    [value]="item.progress">
+                </ion-progress-bar>
+            </ion-label>
+            <ion-button
+                color="light"
+                slot="end"
+                class="ion-no-margin"
+                mode="ios"
+                (click)="remove(item.uid)"
+                *ngIf="disabled === undefined || disabled === true">
+                <ion-icon name="close-outline" color="dark" class="ion-no-margin"></ion-icon>
+            </ion-button>
+        </ion-item>
+        <ion-button
+            class="ion-no-margin"
+            (click)="upload()"
+            mode="ios"
+            *ngIf="disabled === undefined || disabled === true">
+            上传
+        </ion-button>
+    </ion-list>
+</ng-template>

@@ -1,0 +1,41 @@
+ion-item {
+    font-size: 1rem;
+    margin: 0 .75rem;
+    --inner-padding-start: 0;
+    // --inner-padding-end: 0;
+    --padding-start: 0;
+    --padding-end: 0;
+}
+
+ion-content ion-item.item-detail {
+    --padding-bottom: 1rem;
+    ion-thumbnail {
+        width: 6.5rem;
+        height: 6.5rem;
+        margin-right: .825rem;
+    }
+    ion-label,
+    .suffix-buttons {
+        width: 8rem;
+        height: 6.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+    ion-label {
+        justify-content: space-evenly;
+        p {
+            margin: 0;
+            color: var(--ion-color-dark);
+        }
+    }
+    .suffix-buttons {
+        justify-content: space-between;
+        ion-button {
+            --border-radius: 3px;
+            font-size: 1.025rem;
+        }
+        ion-text {
+            align-self: flex-end;
+        }
+    }
+}

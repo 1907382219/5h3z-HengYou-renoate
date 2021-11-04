@@ -1,0 +1,54 @@
+<ion-content>
+    <form [formGroup]="formGroup">
+        <ion-item lines="full" required>
+            <ion-text class="label">品牌</ion-text>
+            <ion-select interface="popover">
+                <ion-select-option value="0">小米</ion-select-option>
+            </ion-select>
+            <ion-icon name="chevron-down-outline" class="suffix-icon"></ion-icon>
+        </ion-item>
+        <ion-item lines="full" required>
+            <ion-text class="label">型号</ion-text>
+            <ion-select interface="popover">
+                <ion-select-option value="0">小米</ion-select-option>
+            </ion-select>
+            <ion-icon name="chevron-down-outline" class="suffix-icon"></ion-icon>
+        </ion-item>
+        <ion-item lines="full" required>
+            <ion-text class="label">机身序列号</ion-text>
+            <ion-input placeholder="请输入机身序列号"></ion-input>
+        </ion-item>
+        <ion-item lines="full">
+            <ion-text class="label">问题描述</ion-text>
+            <ion-textarea
+                placeholder="请输入"
+                [rows]="5">
+            </ion-textarea>
+        </ion-item>
+        <ion-item lines="full" required>
+            <ion-text class="label">图片</ion-text>
+            <app-upload></app-upload>
+        </ion-item>
+        <ion-item lines="full">
+            <ion-text class="label">视频</ion-text>
+            <app-upload type="files"></app-upload>
+        </ion-item>
+    </form>
+    <ion-button
+        mode="ios"
+        expand="block"
+        color="primary"
+        class="submit">
+        提交申请
+    </ion-button>
+    <ul class="tips">
+        <li>
+            <ion-text color="danger">注1：</ion-text>
+            <p>带<ion-text color="danger"> * </ion-text>的为必填项。</p>
+        </li>
+        <li>
+            <ion-text color="danger">注2：</ion-text>
+            <p>未申请或申请通过，发恒友公司要求翻新机器，恒友公司将原机原路退回处理。</p>
+        </li>
+    </ul>
+</ion-content>

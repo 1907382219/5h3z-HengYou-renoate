@@ -1,0 +1,9 @@
+<swiper
+    [config]="config"
+    [(index)]="activeIndex"
+    (click)="modalController.dismiss()">
+    <div *ngFor="let item of data">
+        <img [src]="item">
+    </div>
+    <div class="swiper-scrollbar"></div>
+</swiper>

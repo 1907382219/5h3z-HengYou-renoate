@@ -1,0 +1,10 @@
+ion-content {
+    --padding-top: 1rem;
+    ion-item {
+        font-size: 1rem;
+        --min-height: 2.5rem;
+        &:last-of-type {
+            margin-bottom: 1rem;
+        }
+    }
+}

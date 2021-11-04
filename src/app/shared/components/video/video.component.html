@@ -1,0 +1,47 @@
+<div
+    class="container">
+    <video
+        [src]="src"
+        x5-playsinline="true"
+        playsinline="true"
+        webkit-playsinline="true"
+        preload="true"
+        muted
+        #videoEle
+        (click)="changeVideoState()">
+    </video>
+    <ion-icon
+        name="play-circle-outline"
+        color="light"
+        [ngStyle]="{
+            visibility: videoState.play ? 'hidden' : 'visible'
+        }"
+        (click)="changeVideoState()">
+    </ion-icon>
+    <div
+        class="video-progress"
+        [ngClass]="{
+            mini: videoState.play
+        }">
+        <div
+            class="video-progress_bar"
+            #progressBar>
+            <div class="video-progress_bar-inner">
+                <div
+                    class="video-progress_bar-active"
+                    [ngStyle]="{
+                        width: videoState.progress + '%'
+                    }"
+                    [ngClass]="{
+                        mini: videoState.play,
+                        touching: videoState.touching
+                    }">
+                </div>
+            </div>
+        </div>
+        <div class="progress-text">
+            <span>{{ videoState.currentMinutes }}:{{ videoState.currentSeconds }}</span>
+            <span>{{ videoState.minutes }}:{{ videoState.seconds }}</span>
+        </div>
+    </div>
+</div>
