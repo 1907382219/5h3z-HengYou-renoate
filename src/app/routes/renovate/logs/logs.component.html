@@ -50,19 +50,27 @@
                 <ion-button
                     expand="block"
                     class="ion-no-margin"
-                    fill="outline">
+                    fill="outline"
+                    [routerLink]="['/renovateDetail']"
+                    [queryParams]="{
+                        type: '1'
+                    }">
                     问题详情
                 </ion-button>
                 <ion-button
                     expand="block"
                     class="ion-no-margin"
-                    *ngIf="segmentDefaultValue === '0';">
+                    *ngIf="segmentDefaultValue === '0'">
                     撤销申请
                 </ion-button>
                 <ng-container *ngIf="segmentDefaultValue === '2'">
                     <ion-button
                         expand="block"
-                        class="ion-no-margin">
+                        class="ion-no-margin"
+                        [routerLink]="['/renovateDetail']"
+                        [queryParams]="{
+                            type: '2'
+                        }">
                         缺少配件详情
                     </ion-button>
                     <ion-text color="danger">￥20.00</ion-text>
@@ -70,7 +78,11 @@
                 <ng-container *ngIf="segmentDefaultValue === '3'">
                     <ion-button
                         expand="block"
-                        class="ion-no-margin">
+                        class="ion-no-margin"
+                        [routerLink]="['/renovateDetail']"
+                        [queryParams]="{
+                            type: '3'
+                        }">
                         未通过原因
                     </ion-button>
                     <ion-text color="danger">删除</ion-text>

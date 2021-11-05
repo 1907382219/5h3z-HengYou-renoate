@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { first } from 'rxjs/operators';
 
 @Component({
     selector: 'app-renovate-detail',
@@ -7,8 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RenovateDetailComponent implements OnInit {
 
-    constructor() { }
+    public type: '1' | '2' | '3';
 
-    ngOnInit() {}
+    constructor(
+        private active: ActivatedRoute
+    ) {}
+
+    async ngOnInit(): Promise<void> {
+        const queryMap = await this.active.queryParamMap.pipe(first()).toPromise();
+        this.type = queryMap.get('type') as '1' | '2' | '3';
+    }
 
 }
